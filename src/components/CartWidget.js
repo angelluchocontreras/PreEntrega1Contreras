@@ -16,7 +16,7 @@ function CartWidget() {
           />
         </svg>
         <p className="mt-10 mb-10 ">
-          0
+          4
         </p>
       </div>
     );

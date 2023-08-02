@@ -14,8 +14,6 @@ function NavBar (){
         
       </nav>
       <CartWidget />    
-        
-     
        </>
      )
 }
