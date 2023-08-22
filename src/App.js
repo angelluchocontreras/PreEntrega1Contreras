@@ -1,6 +1,9 @@
+import { BrowserRouter } from "react-router-dom";
 import ItemListContainer from "./components/ItemListContainer";
 import Footer from "./components/Footer";
-import Header from "./components/Header";
+import Headerv2 from "./components/Headerv2"
+import ItemCount from "./components/ItemCount";
+import Mainv2 from "./components/Mainv2"
 
 
 
@@ -8,11 +11,11 @@ import Header from "./components/Header";
 
 function App() {
   return (
-    <>
-    <Header />
-    <ItemListContainer greeting="¡Bienvenido a nuestra tienda en línea!" />
+    <BrowserRouter>
+    <Headerv2 />
+    <Mainv2/>
     <Footer />
-  </>
+  </BrowserRouter>
   );
   
 }

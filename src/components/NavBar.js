@@ -1,21 +1,27 @@
-import CartWidget from "./CartWidget"
-
-function NavBar (){
-    return (
-       <>
-        <div className="block">
-        <h1 className="mt-10 ml-10 mb-10 mr-5 ">Caralimba</h1>
-        
+import React from "react";
+import CartWidget from "./CartWidget";
+import {Link} from "react-router-dom"
+function NavBar() {
+  return (
+    <nav className="py-2 flex items-center justify-between">
+      <div className="ml-4">
+        <Link to= "/" className="text-3xl font-bold">Caralimba</Link>
       </div>
-      <nav className="container flex justify-beetwen items-center">
-        <a href="#">Inicio</a>
-        <a href="#">Nosotros</a>
-        <a href="#">Tienda</a>
-        
-      </nav>
-      <CartWidget />    
-       </>
-     )
+      <div className="flex justify-center">
+  
+        <Link className="text-white hover:text-gray-300 mr-10" to="/cat/1">
+          Remeras
+        </Link>
+        <Link className="text-white hover:text-gray-300 mr-10" to="/cat/2">
+          Pantalones
+        </Link>
+        <Link className="text-white hover:text-gray-300" to="/cat/3">
+        Buzo
+        </Link>
+      </div>
+      <CartWidget />
+    </nav>
+  );
 }
 
-export default NavBar
+export default NavBar;
