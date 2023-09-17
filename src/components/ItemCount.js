@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 
-function ItemCount() {
+function ItemCount({ stock }) {
   const [cantidad, setCantidad] = useState(1);
 
   const incrementar = () => {
-    setCantidad(cantidad + 1);
+    if (cantidad < stock) {
+      setCantidad(cantidad + 1);
+    }
   };
 
   const decrementar = () => {
@@ -14,8 +16,8 @@ function ItemCount() {
   };
 
   return (
-    <div className="text-center my-40">
-      <div className="flex items-center justify-center space-x-4 ">
+    <div>
+      <div className="flex items-center justify-center space-x-4">
         <button
           className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded"
           onClick={decrementar}
@@ -26,12 +28,13 @@ function ItemCount() {
         <button
           className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded"
           onClick={incrementar}
+          disabled={cantidad === stock} 
         >
           +
         </button>
       </div>
-      <p>Cantidad seleccionada: {cantidad}</p>
-      <button className="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded">
+      
+      <button className="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded ml-52 mt-5">
         Confirmar Compra
       </button>
     </div>

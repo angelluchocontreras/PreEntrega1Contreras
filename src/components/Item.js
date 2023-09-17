@@ -1,4 +1,6 @@
 import React from "react";
+import { Link,  } from "react-router-dom";
+
 
 function Item({ id, nombre, img, precio, stock }) {
   return (
@@ -18,9 +20,9 @@ function Item({ id, nombre, img, precio, stock }) {
           </span>
         </p>
       </section>
-      <button className="Opcion bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded transition duration-300">
+      <Link to={`/category/${id}`} className="Opcion bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded transition duration-300">
         Ver Detalles
-      </button>
+      </Link>
     </article>
   );
 }
